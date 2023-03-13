@@ -35,7 +35,8 @@ class Book {
             ? json['volumeInfo']['pageCount'].toString()
             : 'Unknown',
         year: json['volumeInfo']['publishedDate'] ?? 'Unknown',
-        buyLink: json['saleInfo']['buyLink'] ?? '',
+        buyLink:
+            json['saleInfo']['buyLink'] ?? json['volumeInfo']['previewLink'],
         googleLink:
             json['volumeInfo']['previewLink'] ?? json['volumeInfo']['title'],
         description: json['volumeInfo']['description'] ?? 'No description');

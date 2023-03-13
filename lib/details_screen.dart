@@ -21,11 +21,7 @@ class DetailsScreen extends StatelessWidget {
                 context.read<MainProvider>().setIsSearching(true);
                 String url = book.buyLink;
 
-                if (await canLaunchUrl(Uri.parse(url))) {
-                  await launchUrl(Uri.parse(url));
-                } else {
-                  throw 'Could not launch $url';
-                }
+                await launchUrl(Uri.parse(url));
 
                 if (context.mounted) {
                   context.read<MainProvider>().setIsSearching(false);
